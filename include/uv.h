@@ -42,7 +42,7 @@
 extern "C" {
 #endif
 
-#ifdef __VSF__
+#if defined(__VSF__) && defined(_WIN32)
 #   undef _WIN32
 #   undef _MSC_VER
 #   define __linux__
