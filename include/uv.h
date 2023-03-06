@@ -42,6 +42,12 @@
 extern "C" {
 #endif
 
+#ifdef __VSF__
+#   undef _WIN32
+#   undef _MSC_VER
+#   define __linux__
+#endif
+
 #ifdef _WIN32
   /* Windows - set up dll import/export decorators. */
 # if defined(BUILDING_UV_SHARED)

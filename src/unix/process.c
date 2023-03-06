@@ -54,7 +54,9 @@
 # include <crt_externs.h>
 # define environ (*_NSGetEnviron())
 #else
+# ifndef __VSF__
 extern char **environ;
+# endif
 #endif
 
 #if defined(__linux__) || defined(__GLIBC__)
